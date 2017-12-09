@@ -20,7 +20,7 @@ Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootst
 无图片的文章特色图片随机化（\images\thumb\下的10张图片）
 在分享按钮中添加分享到QQ空间选项
 添加评论框中"扑街"图片
-更换表情面板为[OwO](https://github.com/diygod/owo)，支持更多表情（请在\inc\OwO.json中修改表情链接）
+更换表情面板为DIYgay的OwO，支持更多表情（请在\inc\OwO.json中修改表情链接）
 底部社交组件中添加EMAIL
 底部添加建站时间统计（请在\js\kratos.js中修改建站时间）
 修改鼠标指针样式
