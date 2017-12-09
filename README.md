@@ -1,8 +1,10 @@
 # Kratos(Modified)
 
-This is a modified version of Kratos2.5.8. For the original version, please see [https://github.com/Vtrois/Kratos](https://github.com/Vtrois/Kratos).
+This is a modified version of Kratos2.5.8. For the original version, please visit [https://github.com/Vtrois/Kratos](https://github.com/Vtrois/Kratos).
 
 这是一个Kratos2.5.8主题的修改版，作者的原版见[https://github.com/Vtrois/Kratos](https://github.com/Vtrois/Kratos).
+
+修改版演示地址：[https://www.fczbl.vip](https://www.fczbl.vip)
 
 Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootstrap](https://github.com/twbs/bootstrap) and [Font Awesome](https://github.com/FortAwesome/Font-Awesome). Created and maintained by Vtrois. Stay up to date with the latest release and announcements on [Bulletin Board](https://github.com/Vtrois/Kratos/issues). 
 
