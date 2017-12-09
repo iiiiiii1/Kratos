@@ -1256,7 +1256,6 @@ QTags.addButton( 'h2标签', 'h2标签', '<h2>', '</h2>' );
 QTags.addButton( 'hr分隔', 'hr分隔', '\n\n<hr />\n\n', '' );
 QTags.addButton( '蓝色', '蓝色', '<span style="color: #0000ff;">', '</span>' );
 QTags.addButton( '红色', '红色', '<span style="color: #ff0000;">', '</span>' );
-QTags.addButton( '代码高亮', '代码高亮', '<pre class="prettyprint">', '<pre>' );
 QTags.addButton( '折叠/展开', '折叠/展开', '[collapse]', '[/collapse]' );
 QTags.addButton( '本地下载', '本地下载', '[bdbtn]', '[/bdbtn]' );
 QTags.addButton( '云盘下载', '云盘下载', '[ypbtn]', '[/ypbtn]' );
