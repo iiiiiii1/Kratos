@@ -8,7 +8,7 @@ Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootst
 
 ![Kratos Demo](https://www.fczbl.vip/wp-content/uploads/kratos.png) 
 
-Changes:
+## Changes
 ```
 二次元风格
 启用Admin Bar，并将其设置为新注册用户默认不显示
