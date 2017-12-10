@@ -15,6 +15,7 @@ $listlayout = (empty($listlayout)) ? 'new_layout' : $listlayout; ?>
 </div>	
 <div class="kratos-post-inner">
 	<header class="kratos-entry-header clearfix">
+	
 		<h2 class="kratos-entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 		<div class="kratos-post-meta">
 			<span class="pull-left">
@@ -36,13 +37,14 @@ $listlayout = (empty($listlayout)) ? 'new_layout' : $listlayout; ?>
 </div>
 <?php } if($listlayout == 'new_layout'){ ?>
 <div class="kratos-entry-border-new clearfix">
+	<?php if ( is_sticky() ) {echo '<img class="stickyimg" src="'.get_bloginfo('template_directory').'/images/top.png" style="float:right;"/>';}?>
 	<div class="kratos-entry-thumb-new">
 		<?php kratos_blog_thumbnail_new() ?>
 	</div>
 	<div class="kratos-post-inner-new">
 		<header class="kratos-entry-header-new">
 			<a class="label" href="<?php $category = get_the_category();echo get_category_link($category[0] -> term_id) . '">' . $category[0] -> cat_name ; ?><i class="label-arrow"></i></a>
-			<h2 class="kratos-entry-title-new"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+			<h2 class="kratos-entry-title-new"><a href="<?php the_permalink() ?>"><?php the_title(); ?><?php if ( is_sticky() ) {echo "—置顶";}?></a></h2>
 		</header>
 		<div class="kratos-entry-content-new">
 			<p><?php echo wp_trim_words(get_the_excerpt(), 110); ?></p>
