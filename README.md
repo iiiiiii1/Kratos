@@ -20,6 +20,7 @@ Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootst
 顶部"图片文字"点击可返回首页
 添加博客小人spig（请在\js\spig.js中修改小人的提示内容）
 无图片的文章特色图片随机化（\images\thumb\下的10张图片）
+在post-meta中加入作者信息
 在分享按钮中添加分享到QQ空间选项
 添加评论框中"扑街"图片
 更换表情面板为DIYgay的OwO，支持更多表情（请在\inc\OwO.json中修改表情链接）
