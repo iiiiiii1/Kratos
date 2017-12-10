@@ -2675,6 +2675,15 @@ img.size-smiley {
 	}
 }
 
+@media screen and (max-width:535px) {
+	.kratos-post-meta span .fa-thumbs-o-up {
+		display:none;
+	}
+	.kratos-post-meta span .likenum {
+		display:none;
+	}
+}
+
 .video-container:not(:first-child) {
 	margin-top: 15px;
 }
