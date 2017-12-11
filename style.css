@@ -2575,6 +2575,13 @@ img.size-smiley {
 	font-size: 12px;
 }
 
+.kratos-entry-border-new .stickyimg {
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+	margin-left: -41px;
+}
+
 .kratos-entry-thumb-new {
 	position: relative;
 	float: left;
