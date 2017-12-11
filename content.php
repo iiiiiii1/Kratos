@@ -15,7 +15,6 @@ $listlayout = (empty($listlayout)) ? 'new_layout' : $listlayout; ?>
 </div>	
 <div class="kratos-post-inner">
 	<header class="kratos-entry-header clearfix">
-	
 		<h2 class="kratos-entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 		<div class="kratos-post-meta">
 			<span class="pull-left">
@@ -37,7 +36,7 @@ $listlayout = (empty($listlayout)) ? 'new_layout' : $listlayout; ?>
 </div>
 <?php } if($listlayout == 'new_layout'){ ?>
 <div class="kratos-entry-border-new clearfix">
-	<?php if ( is_sticky() ) {echo '<img class="stickyimg" src="'.get_bloginfo('template_directory').'/images/top.png" style="float:right;"/>';}?>
+	<?php if ( is_sticky() ) {echo '<img class="stickyimg" src="'.get_bloginfo('template_directory').'/images/top.png"/>';}?>
 	<div class="kratos-entry-thumb-new">
 		<?php kratos_blog_thumbnail_new() ?>
 	</div>
