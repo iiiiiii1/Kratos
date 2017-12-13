@@ -1,4 +1,4 @@
-﻿/*
+/*
 Theme Name: Kratos(Modified)
 Theme URI: https://github.com/xb2016/Kratos
 Author: Vtrois(Modified by 小白-白)
@@ -399,12 +399,12 @@ table,table tbody tr th {
 }
 
 .kratos-cover.kratos-hero-2,.kratos-start.kratos-hero-2 {
-	height: 225px;
+	height: 270px;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:700px) {
 	.kratos-cover.kratos-hero-2,.kratos-start.kratos-hero-2 {
-		height: 180px;
+		height: 200px;
 	}
 }
 
@@ -453,13 +453,13 @@ table,table tbody tr th {
 }
 
 .kratos-cover.kratos-cover_2 {
-	height: 225px;
+	height: 270px;
 	background-position:top;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:700px) {
 	.kratos-cover.kratos-cover_2 {
-		height: 180px;
+		height: 200px;
 		padding: 3em 0;
 	}
 }
@@ -497,7 +497,7 @@ table,table tbody tr th {
 	display:inline-block;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:700px) {
 	.kratos-cover .desc h2 {
 		font-size: 30px;
 	}
@@ -511,7 +511,7 @@ table,table tbody tr th {
 	display:inline-block;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:700px) {
 	.kratos-cover .desc p,.kratos-cover .desc span {
 		font-size: 21px;
 	}
