@@ -24,6 +24,7 @@ Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootst
 置顶文章加上了文字和图标标记
 在post-meta中加入作者信息
 在分享按钮中添加分享到QQ空间选项
+评论区评论嵌套样式修改（参考Ravenclaw主题样式）
 添加评论框中"扑街"图片
 更换表情面板为DIYgay的OwO，支持更多表情（请在\inc\OwO.json中修改表情链接）
 底部社交组件中添加EMAIL
