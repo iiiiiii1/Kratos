@@ -1256,7 +1256,7 @@ QTags.addButton( 'h2标签', 'h2标签', '<h2>', '</h2>' );
 QTags.addButton( 'hr分隔', 'hr分隔', '\n\n<hr />\n\n', '' );
 QTags.addButton( '蓝色', '蓝色', '<span style="color: #0000ff;">', '</span>' );
 QTags.addButton( '红色', '红色', '<span style="color: #ff0000;">', '</span>' );
-QTags.addButton( '折叠/展开', '折叠/展开', '[collapse]', '[/collapse]' );
+QTags.addButton( '展开/收缩', '展开/收缩', '[collapse title="说明文字"]', '[/collapse]' );
 QTags.addButton( '本地下载', '本地下载', '[bdbtn]', '[/bdbtn]' );
 QTags.addButton( '云盘下载', '云盘下载', '[ypbtn]', '[/ypbtn]' );
 QTags.addButton( '网易云音乐', '网易云音乐', '[music]', '[/music]' );
@@ -1270,10 +1270,10 @@ add_action('admin_print_footer_scripts', 'appthemes_add_quicktags' );
 */
 function xcollapse($atts, $content = null){
 	extract(shortcode_atts(array("title"=>""),$atts));
-	return '<div style="margin: 0.5em 0;">
+	return '<div style="margin: 0.5em 0;background:#f9f9f9;">
 		<div class="xControl">
-			<a href="javascript:void(0)" class="collapseButton xButton"><span style="color: #51aded;">+展开/-收缩</span></a>
-			<div style="clear: both;"></div>
+			<a href="javascript:void(0)" class="collapseButton xButton"><h5>'.$title.'</h5></a>
+			<div class="xicon"><a href="javascript:void(0)" class="icoButton"><i class="fa fa-plus"></i></a></div>
 		</div>
 		<div class="xContent" style="display: none;">'.$content.'</div>
 	</div>';
