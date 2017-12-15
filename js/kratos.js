@@ -263,6 +263,19 @@ jQuery(document).ready(
 	function(jQuery){
 	jQuery('.collapseButton').click(function(){
 		jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
+		if (jQuery(this).parent().parent().find('.xicon').hasClass('active')) {
+			jQuery(this).parent().parent().find('.xicon').removeClass('active');
+		} else {
+			jQuery(this).parent().parent().find('.xicon').addClass('active');
+		}
+	});
+	jQuery('.icoButton').click(function(){
+		jQuery(this).parent().parent().parent().find('.xContent').slideToggle('slow');
+		if (jQuery(this).parent().parent().parent().find('.xicon').hasClass('active')) {
+			jQuery(this).parent().parent().parent().find('.xicon').removeClass('active');
+		} else {
+			jQuery(this).parent().parent().parent().find('.xicon').addClass('active');
+		}
 	});
 });
 //一言
