@@ -3926,3 +3926,44 @@ img.size-smiley {
 	98%{-webkit-transform:translateY(-1.5px) rotate(-.5deg);transform:translateY(-1.5px) rotate(-.5deg)}
 	0%,to{-webkit-transform:translate(0) rotate(0deg);transform:translate(0) rotate(0deg)}
 }
+
+.xControl {
+	position:relative;
+	height:40px;
+}
+
+.xControl .active {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.xControl h5 {
+	margin:0;
+	color:#757575;
+}
+
+.xButton {
+	position:relative;
+	margin:0;
+	left:10px;
+	top:12px;
+}
+
+.xContent {
+	border-top:1px solid #e6e6e6;
+}
+
+.xicon {
+	position:absolute;
+	top:6px;
+	font-size:16px;
+	margin-left:-28px;
+	left:100%;
+	padding:0;
+}
+
+.xicon .icoButton .fa {
+	color:#757575;
+}
