@@ -39,6 +39,8 @@ Kratos: A clean, simple and responsive blog theme of WordPress, based on [Bootst
 后台编辑器可直接插入表情
 表情/图片样式的调整
 后台用户页面显示用户最近一次登录IP
+
+全部信息请前往https://www.fczbl.vip/787.html查看
 ```
 
 ## Structure
@@ -124,7 +126,6 @@ kratos/
 │   ├── layer.min.js
 │   ├── modernizr.min.js
 │   ├── OwO.min.js
-│   ├── OwO.min.js.map
 │   ├── spig.js
 │   └── superfish.js
 ├── 404.php
