@@ -1,4 +1,3 @@
-﻿//右键菜单
 jQuery(document).ready(function ($) {
     $("#spig").mousedown(function (e) {
         if(e.which==3){
@@ -9,30 +8,15 @@ $("#spig").bind("contextmenu", function(e) {
     return false;
 });
 });
-
-//控制台打开提示
-var re = /x/;
-console.log(re);
-re.toString = function() {
-    showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
-    return '';
-};
-
-//复制提示
 $(document).on('copy', function (){
     showMessage('你都复制了些什么呀，转载要记得加上出处哦', 5000);
 });
-
-//鼠标在消息上时
 jQuery(document).ready(function ($) {
     $("#message").hover(function () {
        $("#message").fadeTo("100", 1);
      });
 });
-
-//鼠标在上方时
 jQuery(document).ready(function ($) {
-    //$(".mumu").jrumble({rangeX: 2,rangeY: 2,rangeRot: 1});
     $(".mumu").mouseover(function () {
        $(".mumu").fadeTo("300", 0.3);
        msgs = ["我隐身了，你看不到我", "我会隐身哦！嘿嘿！", "别动手动脚的，把手拿开！", "喵喵喵？", "把手拿开我才出来！"];
@@ -43,15 +27,13 @@ jQuery(document).ready(function ($) {
         $(".mumu").fadeTo("300", 1)
     });
 });
-
-//开始
 jQuery(document).ready(function ($) {
-    if (isindex) { //如果是主页
+    if (isindex) {
         var now = (new Date()).getHours();
         if (now > 0 && now <= 3) {
             showMessage('你是夜猫子呀？还不睡觉，明天起的来么？', 6000);
         } else if (now > 5 && now <= 8) {
-            showMessage('早上好！早起的鸟儿有虫，早起的虫儿被鸟吃~你是鸟儿还是虫儿？嘻嘻~', 6000);
+            showMessage('早上好！早起的鸟儿有虫吃，早起的虫儿被鸟吃~你是鸟儿还是虫儿？嘻嘻~', 6000);
         } else if (now > 11 && now <= 13) {
             showMessage('中午了，吃饭了么？不要饿着了，饿死了谁来挺我呀！', 6000);
         } else if (now > 13 && now <= 14) {
@@ -72,8 +54,6 @@ jQuery(document).ready(function ($) {
 	    duration: 1000
 	});
 });
-
-//鼠标在某些元素上方时
 jQuery(document).ready(function ($) {
     $('h2 a').click(function () {
         showMessage('加载<span style="color:#0099cc;">' + $(this).text() + '</span>中...请稍候');
@@ -124,10 +104,16 @@ jQuery(document).ready(function ($) {
         showMessage('微博？求关注喵！');
 	});
     $('#footer p a i.fa-envelope').mouseover(function(){
-        showMessage('有事请给我发邮件');
+        showMessage('邮件我会及时回复的！');
 	});
     $('#footer p a i.fa-twitter').mouseover(function(){
-        showMessage('Twitter？我不怎么用的说');
+        showMessage('Twitter?好像是不存在的东西?');
+	});
+    $('#footer p a i.fa-facebook-official').mouseover(function(){
+        showMessage('emmm...FB已经好久没上了...');
+	});
+    $('#footer p a i.fa-github').mouseover(function(){
+        showMessage('GayHub！我是新手！');
 	});
     $('.about-photo').mouseover(function(){
         showMessage('快来看看我是谁吧！');
@@ -145,9 +131,6 @@ jQuery(document).ready(function ($) {
         showMessage('要回到开始的地方么？');
 	});
 });
-
-
-//无聊讲点什么
 jQuery(document).ready(function ($) {
 
     window.setInterval(function () {
@@ -156,8 +139,6 @@ jQuery(document).ready(function ($) {
         showMessage(msgs[i], 10000);
     }, 35000);
 });
-
-//无聊动动
 jQuery(document).ready(function ($) {
     window.setInterval(function () {
         msgs = ["乾坤大挪移！", "我飘过来了！~", "我飘过去了", "我得意地飘！~飘！~"];
@@ -167,7 +148,7 @@ jQuery(document).ready(function ($) {
         var i2 = Math.floor(Math.random() * s.length);
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
-            top:  document.body.offsetheight/2*(1+s[i1])
+            top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
         },
 			{
 			    duration: 2000,
@@ -175,8 +156,6 @@ jQuery(document).ready(function ($) {
 			});
     }, 45000);
 });
-
-//评论资料
 jQuery(document).ready(function ($) {
     $("#author").click(function () {
         showMessage("留下你的尊姓大名！");
@@ -224,9 +203,6 @@ jQuery(document).ready(function ($) {
 		});
     });
 });
-
-var spig_top = 50;
-//滚动条移动
 jQuery(document).ready(function ($) {
     var f = $(".spig").offset().top;
     $(window).scroll(function () {
@@ -239,8 +215,6 @@ jQuery(document).ready(function ($) {
 		});
     });
 });
-
-//鼠标点击时
 jQuery(document).ready(function ($) {
     var stat_click = 0;
     $(".mumu").click(function () {
@@ -249,18 +223,16 @@ jQuery(document).ready(function ($) {
             if (stat_click > 4) {
                 msgs = ["你有完没完呀？", "你已经摸我" + stat_click + "次了", "非礼呀！救命！OH，My ladygaga"];
                 var i = Math.floor(Math.random() * msgs.length);
-                //showMessage(msgs[i]);
             } else {
                 msgs = ["筋斗云！~我飞！", "我跑呀跑呀跑！~~", "别摸我，大男人，有什么好摸的！", "惹不起你，我还躲不起你么？", "不要摸我了，我会告诉老婆来打你的！", "干嘛动我呀！小心我咬你！"];
                 var i = Math.floor(Math.random() * msgs.length);
-                //showMessage(msgs[i]);
             }
         s = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6,0.7,0.75,-0.1, -0.2, -0.3, -0.4, -0.5, -0.6,-0.7,-0.75];
         var i1 = Math.floor(Math.random() * s.length);
         var i2 = Math.floor(Math.random() * s.length);
             $(".spig").animate({
             left: document.body.offsetWidth/2*(1+s[i1]),
-            top:  document.body.offsetheight/2*(1+s[i1])
+            top:  (window.innerHeight+document.documentElement.scrollTop-170)-(window.innerHeight-170)/2*(1+s[i2])
             },
 			{
 			    duration: 500,
@@ -271,7 +243,6 @@ jQuery(document).ready(function ($) {
         }
     });
 });
-//显示消息函数 
 function showMessage(a, b) {
     if (b == null) b = 10000;
     jQuery("#message").hide().stop();
@@ -280,11 +251,9 @@ function showMessage(a, b) {
     jQuery("#message").fadeTo("1", 1);
     jQuery("#message").fadeOut(b);
 };
-
-//拖动
 var _move = false;
-var ismove = false; //移动标记
-var _x, _y; //鼠标离控件左上角的相对位置
+var ismove = false;
+var _x, _y;
 jQuery(document).ready(function ($) {
     $("#spig").mousedown(function (e) {
         _move = true;
@@ -301,7 +270,7 @@ jQuery(document).ready(function ($) {
                 $("#spig").css({
                     top: y,
                     left: x
-                }); //控件新位置
+                });
             ismove = true;
             }
         }
