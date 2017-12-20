@@ -1,12 +1,9 @@
 (function() {
-
 	'use strict';
-
 	var shareMenu = function() {
 		$(".Share").click(function() {
 			$(".share-wrap").fadeToggle("slow");
 		});
-
 		$('.qrcode').each(function(index, el) {
 			var url = $(this).data('url');
 			if ($.fn.qrcode) {
@@ -18,7 +15,6 @@
 			}
 		});
 	}
-
 	var topStart = function() {
 		$('#top-Start').click(function() {
 			$('html,body').animate({
@@ -26,18 +22,15 @@
 			}, 1000);
 		});
 	};
-
 	var isiPad = function() {
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
-
 	var isiPhone = function() {
 		return (
 			(navigator.platform.indexOf("iPhone") != -1) ||
 			(navigator.platform.indexOf("iPod") != -1)
 		);
 	};
-
 	var mainMenu = function() {
 		$('#kratos-primary-menu').superfish({
 			delay: 0,
@@ -49,11 +42,9 @@
 			disableHI: true
 		});
 	};
-
 	var parallax = function() {
 		$(window).stellar();
 	};
-
 	var offcanvas = function() {
 		var $clone = $('#kratos-menu-wrap').clone();
 		$clone.attr({
@@ -82,7 +73,6 @@
 			}
 		});
 	}
-
 	var sidebaraffix = function() {
 		if ($("#main").height() > $("#sidebar").height()) {
 			var footerHeight = 0;
@@ -97,7 +87,6 @@
 			});
 		}
 	}
-
 	var mobileMenuOutsideClick = function() {
 		$(document).click(function(e) {
 			var container = $("#offcanvas-menu, .js-kratos-nav-toggle");
@@ -108,7 +97,6 @@
 			}
 		});
 	};
-
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.animate-box').waypoint(function(direction) {
@@ -129,7 +117,6 @@
 			offset: '85%'
 		});
 	};
-
 	var showThumb = function(){
 		(function ($) {
 			$.extend({
@@ -167,9 +154,7 @@
 				}
 			});
 		})(jQuery);
-
 	}
-
 	var showlove = function() {
 			$.fn.postLike = function() {
 				if ($(this).hasClass('done')) {
@@ -196,7 +181,6 @@
 				$(this).postLike();
 			});
 		}
-
 	var gotop = function() {
 		var offset = 300,
 			offset_opacity = 1200,
@@ -220,7 +204,6 @@
 			);
 		});
 	}
-	
 	var weixinpic = function() {
 		$("#weixin-img").mouseout(function(){
 	        $("#weixin-pic")[0].style.display = 'none';
@@ -229,19 +212,16 @@
 	        $("#weixin-pic")[0].style.display = 'block';
 	    })
 	}
-
 	var showPhotos = function() {
 		layer.photos({
 		  photos: '.kratos-post-content'
 		  ,anim: 0
 		}); 
 	}
-
 	var copyright = function() {
 		console.log("原项目托管：https://github.com/Vtrois/Kratos");
 		console.log("修改版项目托管：https://github.com/xb2016/Kratos");
 	}
-
 	$(function() {
 		topStart();
 		mainMenu();
@@ -279,20 +259,11 @@ jQuery(document).ready(
 	});
 });
 //一言
-setTimeout("getkoto()",3000);
-var t;
+window.setInterval(getkoto,4000); 
 function getkoto(){
-	var hjs = document.createElement('script');
-	hjs.setAttribute('id', 'hjs');
-	hjs.setAttribute('src', 'https://api.lwl12.com/hitokoto/main/get/hitokoto/?encode=json');
-	document.getElementById("hjsbox").appendChild(hjs);
-	t=setTimeout("getkoto()",10000);
-	}
-function echokoto(result){
-	var hc = eval(result);
-	//$("#hitokoto").fadeTo(300,0);
-	document.getElementById("hitokoto").innerHTML = hc.hitokoto;
-	//$("#hitokoto").fadeTo(300,0.75);
+	$.post("https://www.fczbl.vip/api/hitokoto/",function(hitokoto) {
+		$(".hitokoto").html(hitokoto);
+	});
 }
 //请在这里修改你的建站时间
 function show_date_time(){
@@ -301,45 +272,10 @@ function show_date_time(){
 	span_dt_dt.innerHTML=daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒"
 }
 show_date_time();
-//OωO表情
-//请注意下面api的路径
-var OwO_demo = new OwO({
-	logo: 'OωO表情',
-	container: document.getElementsByClassName('OwO')[0],
-	target: document.getElementsByClassName('OwO')[0],
-	api: '/wp-content/themes/kratos/inc/OwO.json',
-	position: 'down',
-	width: '90%',
-	maxHeight: '250px'
-});
-function grin(tag) {
-	var myField;
-	tag = ' ' + tag + ' ';
-	if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
-	myField = document.getElementById('comment');
-	} else {
-		return false;
-	}
-	if (document.selection) {
-		myField.focus();
-	sel = document.selection.createRange();
-		sel.text = tag;
-	myField.focus();
-	} else if (myField.selectionStart || myField.selectionStart == '0') {
-		var startPos = myField.selectionStart;
-		var endPos = myField.selectionEnd;
-		var cursorPos = endPos;
-		myField.value = myField.value.substring(0, startPos)
-			+ tag
-			+ myField.value.substring(endPos, myField.value.length);
-		cursorPos += tag.length;
-		myField.focus();
-		myField.selectionStart = cursorPos;
-		myField.selectionEnd = cursorPos;
-		var owoopen = document.getElementsByClassName('OwO OwO-open')[0];
-		owoopen.className = "OwO";
-	} else {
-		myField.value += tag;
-		myField.focus();
-	}
-}
+//log
+window.onload = function() {
+	var now = new Date().getTime();
+	var page_load_time = now - performance.timing.navigationStart;
+	console.log('%cwww.fczbl.vip', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:2em;');
+	console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;');
+};
