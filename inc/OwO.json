@@ -294,10 +294,13 @@
 			{
                 "icon": "<a href=\"javascript:grin(':huaji21:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji21.gif\"></a>",
                 "text": ""
-            }
-			,
+            },
 			{
                 "icon": "<a href=\"javascript:grin(':huaji22:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji22.png\"></a>",
+                "text": ""
+            },
+			{
+                "icon": "<a href=\"javascript:grin(':huaji23:')\"><img src=\"//www.yoursite.com/wp-content/themes/Kratos/images/smilies/huaji23.png\"></a>",
                 "text": ""
             }
         ]
