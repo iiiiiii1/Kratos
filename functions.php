@@ -52,7 +52,6 @@ function kratos_theme_scripts() {
         wp_enqueue_style( 'superfish', $dir . '/css/superfish.min.css', array(), 'r7');
         wp_enqueue_style( 'layer', $dir . '/css/layer.min.css', array(), KRATOS_VERSION);
         wp_enqueue_style( 'kratos', get_stylesheet_uri(), array(), KRATOS_VERSION);
-        wp_enqueue_script( 'OwO', $dir . '/js/OwO.min.js', array(), '0.0.1'); 
         wp_enqueue_script( 'jquery', $dir . '/js/jquery.min.js' , array(), '2.1.4');
         wp_enqueue_script( 'easing', $dir . '/js/jquery.easing.min.js', array(), '1.3.0'); 
         wp_enqueue_script( 'qrcode', $dir . '/js/jquery.qrcode.min.js', array(), KRATOS_VERSION);
@@ -788,7 +787,7 @@ function kratos_blog_thumbnail_new() {
         } else {
 			$checkimg = kratos_option('default_image');
 			if(empty($checkimg)){
-			   $random = mt_rand(1, 10);
+			   $random = mt_rand(1, 20);
 			   echo '<a href="'.get_permalink().'"><img src="'.get_bloginfo('template_url').'/images/thumb/thumb_'.$random.'.jpg" /></a>';
 			} else {
                echo '<a href="'.get_permalink().'"><img src="'. kratos_option('default_image') .'" /></a>';
@@ -1031,6 +1030,7 @@ function smilies_reset() {
 ':huaji20:' => 'huaji20.gif',
 ':huaji21:' => 'huaji21.gif',
 ':huaji22:' => 'huaji22.png',
+':huaji23:' => 'huaji23.png',
 ':mianqiang:' => 'mianqiang.png',
 ':kuanghan:' => 'kuanghan.png',
 ':guai:' => 'guai.png',
