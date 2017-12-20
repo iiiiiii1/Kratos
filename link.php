@@ -20,25 +20,29 @@ get_header('banner'); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article>
 					<div class="kratos-hentry kratos-post-inner clearfix">
-						<div class="kratos-post-content"><?php the_content(); ?>
+						<div class="kratos-post-content">
+						<h2 style="text-align: center; font-size: 18pt;">dalao们</h2>
+						<p style="text-align: center;"><span style="color: #999999;">dalao们的链接，每次刷新随机排序~</span></p>
 						<div class="linkpage">
-					<hr />
-					<ul>
-                        <?php
-						    $bookmarks = get_bookmarks();
-						    if ( !empty($bookmarks) ){
-    						    foreach ($bookmarks as $bookmark) {
+							<hr />
+							<ul>
+							<?php
+							$bookmarks = get_bookmarks(array('orderby'=>'rand'));
+							if ( !empty($bookmarks) ){
+								foreach ($bookmarks as $bookmark) {
 									$friendimg = $bookmark->link_image;
 									if ( empty($friendimg)){
-										echo '<li><a href="' . $bookmark->link_url . '" target="_blank" rel="follow"><img src="https://www.fczbl.vip/wp-content/plugins/wp-user-avatars/wp-user-avatars/assets/images/mystery.jpg"><h4>'. $bookmark->link_name .'</h4><p>' . $bookmark->link_description . '</p></a></li>';
+										echo '<li><a href="' . $bookmark->link_url . '" target="_blank" rel="nofollow"><img src="https://www.fczbl.vip/wp-content/plugins/wp-user-avatars/wp-user-avatars/assets/images/mystery.jpg"><h4>'. $bookmark->link_name .'</h4><p>' . $bookmark->link_description . '</p></a></li>';
 									} else {
-    						            echo '<li><a href="' . $bookmark->link_url . '" target="_blank" rel="follow"><img src="' . $bookmark->link_image . '"><h4>'. $bookmark->link_name .'</h4><p>' . $bookmark->link_description . '</p></a></li>';
-    						        }
+										echo '<li><a href="' . $bookmark->link_url . '" target="_blank" rel="nofollow"><img src="' . $bookmark->link_image . '"><h4>'. $bookmark->link_name .'</h4><p>' . $bookmark->link_description . '</p></a></li>';
+									}
 								}
-					    	}
-                        ?>
-                    </ul>
-                    <hr /></div></div>
+							}
+							?>
+							</ul>
+							<hr />
+						</div>
+						</div>
 						<?php if(kratos_option('page_like_donate')||kratos_option('page_share')) {?>
 						<footer class="kratos-entry-footer clearfix">
 								<div class="post-like-donate text-center clearfix" id="post-like-donate">
