@@ -3,7 +3,7 @@
  * Kratos functions and definitions
  *
  * @package Vtrois
- * @version 2.5
+ * @version 2.5(17/12/23)
  */
 
 define( 'KRATOS_VERSION', '2.5' );
@@ -55,7 +55,7 @@ function kratos_theme_scripts() {
         wp_enqueue_script( 'jquery', $dir . '/js/jquery.min.js' , array(), '2.1.4');
         wp_enqueue_script( 'easing', $dir . '/js/jquery.easing.min.js', array(), '1.3.0'); 
         wp_enqueue_script( 'qrcode', $dir . '/js/jquery.qrcode.min.js', array(), KRATOS_VERSION);
-        wp_enqueue_script( 'layer', $dir . '/js/layer.min.js', array(), '3.0.3');
+        wp_enqueue_script( 'layer', $dir . '/js/layer.min.js', array(), '3.1.0');
         wp_enqueue_script( 'modernizr', $dir . '/js/modernizr.min.js' , array(), '2.6.2');
         wp_enqueue_script( 'bootstrap', $dir . '/js/bootstrap.min.js', array(), '3.3.7');
         wp_enqueue_script( 'waypoints', $dir . '/js/jquery.waypoints.min.js', array(), '4.0.0');
@@ -63,7 +63,6 @@ function kratos_theme_scripts() {
         wp_enqueue_script( 'hoverIntents', $dir . '/js/hoverIntent.min.js', array(), 'r7');
         wp_enqueue_script( 'superfish', $dir . '/js/superfish.js', array(), '1.0.0');
         wp_enqueue_script( 'kratos', $dir . '/js/kratos.js', array(),  KRATOS_VERSION);
-        wp_enqueue_script( 'spig', $dir . '/js/spig.js', array(),  '1.0.0');
     }
 }
 add_action('wp_enqueue_scripts', 'kratos_theme_scripts');
@@ -1260,6 +1259,14 @@ QTags.addButton( '展开/收缩', '展开/收缩', '[collapse title="说明文�
 QTags.addButton( '本地下载', '本地下载', '[bdbtn]', '[/bdbtn]' );
 QTags.addButton( '云盘下载', '云盘下载', '[ypbtn]', '[/ypbtn]' );
 QTags.addButton( '网易云音乐', '网易云音乐', '[music]', '[/music]' );
+QTags.addButton( '绿色背景栏', '绿色背景栏', '[success]', '[/success]' );
+QTags.addButton( '蓝色背景栏', '蓝色背景栏', '[info]', '[/info]' );
+QTags.addButton( '黄色背景栏', '黄色背景栏', '[warning]', '[/warning]' );
+QTags.addButton( '红色背景栏', '红色背景栏', '[danger]', '[/danger]' );
+QTags.addButton( '绿色面板', '绿色面板', '[successbox title="标题内容"]', '[/successbox]' );
+QTags.addButton( '蓝色面板', '蓝色面板', '[infobox title="标题内容"]', '[/infobox]' );
+QTags.addButton( '黄色面板', '黄色面板', '[warningbox title="标题内容"]', '[/warningbox]' );
+QTags.addButton( '红色面板', '红色面板', '[dangerbox title="标题内容"]', '[/dangerbox]' );
 </script>
 <?php
 }
