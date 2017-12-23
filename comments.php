@@ -3,7 +3,7 @@
  * The template for displaying comments
  *
  * @package Vtrois
- * @version 2.5
+ * @version 2.5(17/12/23)
  */
 
 if ( post_password_required() ) {
@@ -46,13 +46,13 @@ if ( post_password_required() ) {
 		);
 		comment_form($args);
 	?>
-	<script type="text/javascript" src="/wp-content/themes/Kratos/js/OwO.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri();?>/js/OwO.min.js"></script>
 	<script>
 	var OwO_demo = new OwO({
 		logo: 'OωO表情',
 		container: document.getElementsByClassName('OwO')[0],
 		target: document.getElementsByClassName('OwO')[0],
-		api: '/wp-content/themes/kratos/inc/OwO.json',
+		api: '<?php echo get_stylesheet_directory_uri();?>/inc/OwO.json',
 		position: 'down',
 		width: '90%',
 		maxHeight: '250px'
