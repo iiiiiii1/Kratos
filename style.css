@@ -4,7 +4,7 @@ Theme URI: https://github.com/xb2016/Kratos
 Author: Vtrois(Modified by 小白-白)
 Author URI: https://www.vtrois.com/
 Description: Kratos 是一款专注于个人博客的主题，提供了一套可自定义的积木式页面配置组件，可以通过使用小工具、导航、社交组件、站点标识、自定颜色等来个性化你的站点。此为小白-白的修改版。
-Version: 2.5.8(17.12.20)
+Version: 2.5.8(17.12.23)
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: 简约, 紧凑, 优雅, 情怀, 多栏, 自适应, 响应式, 小工具, 灵活顶部, 主题选项, 打赏组件, 收录优化, 文章分享, 轮播图片, 邮件功能, 社交组件, 广告栏目, 特色图像, 随动边栏, 嵌套评论, 页脚挂件, 自定义边栏, 自定义颜色, 自定义背景, 自定义布局
@@ -1673,8 +1673,6 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	color:#333
 }
 .kratos-post-content img {
-	height:auto;
-	width:auto;
 	max-width:100%;
 	display:block;
 	margin:0 auto;
@@ -1707,6 +1705,9 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	border-top:1px solid #eee;
 	color:#9d9d9d
 }
+.kratos-entry-footer .footer-tag {
+	border-top:1px solid #eee
+}
 .kratos-entry-footer .footer-tag a {
 	position:relative;
 	display:inline-block;
@@ -1720,6 +1721,13 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	font-size:11px;
 	line-height:13px
 }
+.pull-date {
+	display:block;
+    float:right;
+    margin-top:1.7rem;
+    padding:0;
+    font-size:14px
+}
 .kratos-entry-footer .footer-tag a:focus,.kratos-entry-footer .footer-tag a:hover {
 	color:#fff!important
 }
@@ -1727,7 +1735,8 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	background:#8d8d8d
 }
 .kratos-entry-footer .post-like-donate {
-	margin-top:20px
+	margin-top:20px;
+	margin-bottom:20px
 }
 .kratos-entry-footer .post-like-donate a {
 	display:inline-block;
@@ -2291,6 +2300,40 @@ img.size-smiley {
 }
 .js .animate-box {
 	opacity:0
+}
+.donate-box .meta-pay {
+	margin-top:12px;
+	margin-bottom:12px;
+	color:#333
+}
+.donate-box .qr-pay img {
+	width:200px;
+	height:200px
+}
+.donate-box .choose-pay {
+	margin-top:6px
+}
+.donate-box .choose-pay input {
+	display:none
+}
+.donate-box .choose-pay input:checked+label {
+	border-color:#0092ee;
+	color:#0092ee
+}
+.donate-box .pay-button {
+	margin:10px 5px;
+	width:132px;
+	height:45px;
+	border:1px solid #e6e6e6;
+	text-align:center;
+	line-height:38px;
+	cursor:url(images/pointer.cur),default
+}
+.donate-box .pay-button img {
+	height:26px
+}
+.d-none {
+	display:none
 }
 #kratos-wrapper {
 	overflow-x:hidden;
@@ -2983,7 +3026,7 @@ img.size-smiley {
 }
 .xButton {
 	display:block;
-	padding-left:15px;
+	padding-left:10px;
 	padding-right:30px
 }
 .xControl h5 {
@@ -3014,15 +3057,11 @@ img.size-smiley {
 	margin-left:13px;
 	margin-right:13px
 }
-#Snow {
-	position:fixed;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	z-index:99999;
-	background:rgba(236, 240, 228, 0.05);
-	pointer-events:none
+ruby {
+    background:#f2f2f2;
+    margin:0 2px;
+    padding:0 2px;
+    border-radius:4px
 }
 @media screen and (max-width:1200px) {
 	.kratos-entry-content-new {
@@ -3212,7 +3251,7 @@ img.size-smiley {
 	}
 }
 @media screen and (max-width:535px) {
-	.kratos-post-meta span .fa-thumbs-o-up,.spig,.kratos-post-meta span .likenum,#Snow {
+	.kratos-post-meta span .fa-thumbs-o-up,.spig,.kratos-post-meta span .likenum,.pull-date {
 		display:none
 	}
 }
