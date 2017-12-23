@@ -218,10 +218,6 @@
 		  ,anim: 0
 		}); 
 	}
-	var copyright = function() {
-		console.log("原项目托管：https://github.com/Vtrois/Kratos");
-		console.log("修改版项目托管：https://github.com/xb2016/Kratos");
-	}
 	$(function() {
 		topStart();
 		mainMenu();
@@ -235,7 +231,6 @@
 		mobileMenuOutsideClick();
 		contentWayPoint();
 		showPhotos();
-		copyright();
 	});
 }());
 //内容展开/收缩
@@ -259,7 +254,7 @@ jQuery(document).ready(
 	});
 });
 //一言
-window.setInterval(getkoto,4000); 
+window.setInterval(getkoto,6000); 
 function getkoto(){
 	$.post("https://www.fczbl.vip/api/hitokoto/",function(hitokoto) {
 		$(".hitokoto").html(hitokoto);
@@ -276,6 +271,8 @@ show_date_time();
 window.onload = function() {
 	var now = new Date().getTime();
 	var page_load_time = now - performance.timing.navigationStart;
+	console.clear();
+	console.log("项目托管：https://github.com/xb2016/Kratos");
 	console.log('%cwww.fczbl.vip', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:2em;');
 	console.log('%c页面加载完毕消耗了'+Math.round(performance.now()*100)/100+'ms','background: #fff;color: #333;text-shadow: 0 0 2px #eee, 0 0 3px #eee, 0 0 3px #eee, 0 0 2px #eee, 0 0 3px #eee;');
 };
