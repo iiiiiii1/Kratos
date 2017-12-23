@@ -3,7 +3,7 @@
  * The template for displaying all single posts and attachments
  *
  * @package Vtrois
- * @version 2.5
+ * @version 2.5(17/12/23)
  */
 
 $sidebar = kratos_option('side_bar');
@@ -48,7 +48,28 @@ get_header('banner'); ?>
 						<footer class="kratos-entry-footer clearfix">
 							<div class="post-like-donate text-center clearfix" id="post-like-donate">
 							<?php if ( kratos_option( 'post_like_donate' ) ) : ?>
-				   			<a href="<?php echo kratos_option('donate_links'); ?>" class="Donate"><i class="fa fa-bitcoin"></i> 打赏</a>
+				   			<a href="javascript:;" class="Donate"><i class="fa fa-bitcoin"></i> 打赏</a>
+								<script>(function() {
+								$(function(){
+								$(".Donate").on('click', function(){
+										layer.open({
+										type: 1,
+										area: ['300px', '370px'],
+										title: '<?php echo kratos_option( 'paytext_head' );?>',
+										resize: false,
+										scrollbar: false,
+										shade: 0.6,
+										anim: 0,
+										content: '<div class="donate-box"><div class="meta-pay text-center"><strong><?php echo kratos_option( 'paytext' );?></strong></div><div class="qr-pay text-center"><img class="pay-img" id="alipay_qr" src="<?php echo kratos_option( 'alipayqr_url' );?>"><img class="pay-img d-none" id="wechat_qr" src="<?php echo kratos_option( 'wechatpayqr_url' );?>"></div><div class="choose-pay text-center"><input id="alipay" type="radio" name="pay-method" checked><label for="alipay" class="pay-button"><img src="<?php echo get_stylesheet_directory_uri();?>/images/alipay.png"></label><input id="wechatpay" type="radio" name="pay-method"><label for="wechatpay" class="pay-button"><img src="<?php echo get_stylesheet_directory_uri();?>/images/wechat.png"></label></div></div>'
+									});
+									$(".choose-pay input[type='radio']").click(function(){
+										var id= $(this).attr("id");
+										if (id=='alipay') { $(".qr-pay #alipay_qr").removeClass('d-none');$(".qr-pay #wechat_qr").addClass('d-none') };
+										if (id=='wechatpay') { $(".qr-pay #alipay_qr").addClass('d-none');$(".qr-pay #wechat_qr").removeClass('d-none') };
+									});
+								});
+								});
+								}());</script>
 				   			<?php endif; ?>
 				   			<a href="javascript:;" id="btn" data-action="love" data-id="<?php the_ID(); ?>" class="Love <?php if(isset($_COOKIE['love_'.$post->ID])) echo 'done';?>" ><i class="fa fa-thumbs-o-up"></i> 点赞</a>
 							<?php if ( kratos_option( 'post_share' ) ) : ?>
@@ -60,6 +81,9 @@ get_header('banner'); ?>
 								<div class="pull-left">
 								<i class="fa fa-tags"></i>
 								<?php if ( get_the_tags() ) { the_tags('', ' ', ''); } else{ echo '<a>No Tag</a>';  }?>
+								</div>
+								<div class="pull-date">
+								<span>最后编辑：<?php $d=strtotime($post->post_modified);echo date('Y年m月d日',$d);?></span>
 								</div>
 							</div>
 						</footer>
