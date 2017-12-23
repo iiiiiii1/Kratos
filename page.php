@@ -3,7 +3,7 @@
  * The template for displaying pages
  *
  * @package Vtrois
- * @version 2.5
+ * @version 2.5(17/12/23)
  */
 $page_side_bar = kratos_option('page_side_bar');
 $page_side_bar = (empty($page_side_bar)) ? 'right_side' : $page_side_bar;
@@ -31,7 +31,28 @@ get_header('banner'); ?>
 						<footer class="kratos-entry-footer clearfix">
 								<div class="post-like-donate text-center clearfix" id="post-like-donate">
 								<?php if ( kratos_option( 'page_like_donate' ) ) : ?>
-					   			<a href="<?php echo kratos_option('donate_links'); ?>" class="Donate"><i class="fa fa-bitcoin"></i> 打赏</a>
+					   			<a href="javascript:;" class="Donate"><i class="fa fa-bitcoin"></i> 打赏</a>
+								<script>(function() {
+								$(function(){
+								$(".Donate").on('click', function(){
+										layer.open({
+										type: 1,
+										area: ['300px', '370px'],
+										title: '<?php echo kratos_option( 'paytext_head' );?>',
+										resize: false,
+										scrollbar: false,
+										shade: 0.6,
+										anim: 0,
+										content: '<div class="donate-box"><div class="meta-pay text-center"><strong><?php echo kratos_option( 'paytext' );?></strong></div><div class="qr-pay text-center"><img class="pay-img" id="alipay_qr" src="<?php echo kratos_option( 'alipayqr_url' );?>"><img class="pay-img d-none" id="wechat_qr" src="<?php echo kratos_option( 'wechatpayqr_url' );?>"></div><div class="choose-pay text-center"><input id="alipay" type="radio" name="pay-method" checked><label for="alipay" class="pay-button"><img src="<?php echo get_stylesheet_directory_uri();?>/images/alipay.png"></label><input id="wechatpay" type="radio" name="pay-method"><label for="wechatpay" class="pay-button"><img src="<?php echo get_stylesheet_directory_uri();?>/images/wechat.png"></label></div></div>'
+									});
+									$(".choose-pay input[type='radio']").click(function(){
+										var id= $(this).attr("id");
+										if (id=='alipay') { $(".qr-pay #alipay_qr").removeClass('d-none');$(".qr-pay #wechat_qr").addClass('d-none') };
+										if (id=='wechatpay') { $(".qr-pay #alipay_qr").addClass('d-none');$(".qr-pay #wechat_qr").removeClass('d-none') };
+									});
+								});
+								});
+								}());</script>
 					   			<?php endif; ?>
 								<?php if ( kratos_option( 'page_share' ) ) : ?>
 								<a href="javascript:;"  class="Share" ><i class="fa fa-share-alt"></i> 分享</a>
