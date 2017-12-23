@@ -3,7 +3,7 @@
  * The template for Settings content control
  *
  * @package Vtrois
- * @version 2.5
+ * @version 2.5(17/12/23)
  */
 
 function optionsframework_option_name() {
@@ -62,6 +62,12 @@ function optionsframework_options() {
 		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
+		'name' => '浮动小人',
+		'desc' => '是否启用浮动小人功能',
+		'id' => 'site_spig',
+		'std' => '1',
+		'type' => 'checkbox');
+	$options[] = array(
 		'name' => '站点黑白',
 		'desc' => '是否启用站点黑白功能(一般常用于悼念日)',
 		'id' => 'site_bw',
@@ -69,20 +75,37 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '站点雪花',
-		'desc' => '是否启用站点雪花效果',
+		'desc' => '是否启用站点雪花功能(更多设置请前往雪花设置页)',
 		'id' => 'site_snow',
 		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
-		'name' => '打赏连接',
-		'desc' => '输入您的打赏介绍页面的连接，若没开启点赞打赏功能该项无效',
-		'id' => 'donate_links',
+		'name' => '打赏页面标题',
+		'id' => 'paytext_head',
+		'std' => '打赏作者',
 		'type' => 'text');
+	$options[] = array(
+		'name' => '付款码上方提示文字',
+		'id' => 'paytext',
+		'std' => '扫一扫支付',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '微信收款码',
+		'desc' => '上传你的微信收款二维码图片，图片尺寸要大于200px',
+		'id' => 'wechatpayqr_url',
+		'std' => get_template_directory_uri() . '/images/wechatpayqr.png',
+		'type' => 'upload');
+	$options[] = array(
+		'name' => '支付婊收款码',
+		'desc' => '上传你的支付婊收款二维码图片，图片尺寸要大于200px',
+		'id' => 'alipayqr_url',
+		'std' => get_template_directory_uri() . '/images/alipayqr.png',
+		'type' => 'upload');
 	$options[] = array(
 		'name' => '组件配置',
 		'type' => 'heading');
 	$options[] = array(
-		'name' => '特色图片（留空使用随机图片10张）',
+		'name' => '特色图片（留空使用随机图片20张）',
 		'desc' => '选择你喜欢的默认特色图片（仅针对新式布局）',
 		'id' => 'default_image',
 		'std' => get_template_directory_uri() . '/images/thumb/thumb_1.jpg',
@@ -114,7 +137,7 @@ function optionsframework_options() {
 		'name' => '微信展示',
 		'desc' => '是否启用微信展示按钮功能',
 		'id' => 'cd_weixin',
-		'std' => '0',
+		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '微信图片',
@@ -193,7 +216,7 @@ function optionsframework_options() {
 		'name' => '版权声明',
 		'desc' => '是否启用 CC BY-SA 4.0 声明',
 		'id' => 'post_cc',
-		'std' => '1',
+		'std' => '0',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '分享按钮',
@@ -205,7 +228,7 @@ function optionsframework_options() {
 		'name' => '打赏按钮',
 		'desc' => '是否启用文章打赏功能',
 		'id' => 'post_like_donate',
-		'std' => '0',
+		'std' => '1',
 		'type' => 'checkbox');
 	$options[] = array(
 		'name' => '模板页面',
@@ -506,6 +529,63 @@ function optionsframework_options() {
 		'desc' => '连接前要带有mailto: ',
 		'id' => 'social_mail',
 		'std' => '',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花设置',
+		'type' => 'heading');
+	$options[] = array(
+		'name' => '移动端是否显示',
+		'desc' => '配置移动端是否显示，默认是',
+		'id' => 'snow_xb2016_mobile',
+		'std' => '1',
+		'type' => 'checkbox');
+	$options[] = array(
+		'name' => '雪花数量',
+		'desc' => '数值越大雪花数量越多，默认200',
+		'id' => 'snow_xb2016_flakecount',
+		'std' => '200',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花大小',
+		'desc' => '为基准值，数值越大雪花越大，默认2',
+		'id' => 'snow_xb2016_size',
+		'std' => '2',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花距离',
+		'desc' => '雪花距离鼠标指针的最小值，小于这个距离的雪花将受到鼠标的排斥，默认150',
+		'id' => 'snow_xb2016_mindist',
+		'std' => '150',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花速度',
+		'desc' => '为基准值，数值越大雪花速度越快，默认0.5',
+		'id' => 'snow_xb2016_speed',
+		'std' => '0.5',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花横移度',
+		'desc' => '为基准值，数值越大雪花横移幅度越大，0为竖直下落，默认1',
+		'id' => 'snow_xb2016_stepsize',
+		'std' => '1',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花颜色',
+		'desc' => '请用RGB格式表示，默认255,255,255',
+		'id' => 'snow_xb2016_snowcolor',
+		'std' => '255,255,255',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '雪花不透明度',
+		'desc' => '为基准值，范围0~1，1为不透明，默认0.3',
+		'id' => 'snow_xb2016_opacity',
+		'std' => '0.3',
+		'type' => 'text');
+	$options[] = array(
+		'name' => '背景颜色',
+		'desc' => '请用RGB格式表示，默认225,225,225,0.1',
+		'id' => 'snow_xb2016_bgcolor',
+		'std' => '225,225,225,0.1',
 		'type' => 'text');
 	$options[] = array(
 		'name' => '广告配置',
