@@ -1673,6 +1673,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	color:#333
 }
 .kratos-post-content img {
+	height:auto;
 	max-width:100%;
 	display:block;
 	margin:0 auto;
