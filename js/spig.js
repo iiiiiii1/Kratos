@@ -1,3 +1,9 @@
+window.setInterval(getkoto,6000); 
+function getkoto(){
+	$.post("https://www.fczbl.vip/api/hitokoto/",function(hitokoto) {
+		$(".hitokoto").html(hitokoto);
+	});
+}
 jQuery(document).ready(function ($) {
     $("#spig").mousedown(function (e) {
         if(e.which==3){
@@ -132,7 +138,6 @@ jQuery(document).ready(function ($) {
 	});
 });
 jQuery(document).ready(function ($) {
-
     window.setInterval(function () {
         msgs = [$("#hitokoto").text()];
         var i = Math.floor(Math.random() * msgs.length);
@@ -180,7 +185,6 @@ jQuery(document).ready(function ($) {
 		});
     });
     $("#url").click(function () {
-
         showMessage("快快告诉我你的家在哪里，好让我去参观参观！");
         $(".spig").animate({
             top: $("#url").offset().top - 70,
