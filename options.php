@@ -3,7 +3,7 @@
  * The template for Settings content control
  *
  * @package Vtrois
- * @version 2.5(17/12/23)
+ * @version 2.5(17.12.29)
  */
 
 function optionsframework_option_name() {
@@ -23,11 +23,6 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => '站点配置',
 		'type' => 'heading');
-	$options[] = array(
-		'name' => '站点图片Logo',
-		'desc' => '推荐图片尺寸 200px*50px，保存成功则自动显示',
-		'id' => 'site_logo',
-		'type' => 'upload');
 	$options[] = array(
 		'name' => '背景颜色',
 		'desc' => '针对整个站点背景颜色控制',
@@ -167,39 +162,20 @@ function optionsframework_options() {
 		'name' => '顶部配置',
 		'type' => 'heading');
 	$options[] = array(
-		'name' => '顶部类型',
-		'desc' => '选择您喜欢的顶部类型并修改其对应选项',
-		'id' => 'background_mode',
-		'std' => 'image',
-		'type' => 'select',
-		'class' => 'mini',
-		'options' => array(
-			'image' => '图片',
-			'color' => '颜色'));
-	$options[] = array(
-		'name' => '图片样式',
-		'desc' => '只有在类型中选择“图片”才起作用',
+		'name' => '顶部图片',
 		'id' => 'background_image',
 		'std' => get_template_directory_uri() . '/images/background.jpg',
 		'type' => 'upload');
 	$options[] = array(
 		'name' => '图片文字-1(可做文字标题)',
 		'id' => 'background_image_text1',
-		'desc' => '只有在类型中选择“图片”才起作用',
 		'std' => 'Kratos',
 		'type' => 'text');
 	$options[] = array(
 		'name' => '图片文字-2(可做站点描述)',
 		'id' => 'background_image_text2',
-		'desc' => '只有在类型中选择“图片”才起作用',
 		'std' => 'A responsible theme for WordPress',
 		'type' => 'text');
-	$options[] = array(
-		'name' => '颜色样式',
-		'desc' => '只有在类型中选择“颜色”才起作用',
-		'id' => 'background_color',
-		'std' => '#222831',
-		'type' => 'color');
 	$options[] = array(
 		'name' => '内容页面',
 		'type' => 'heading');
