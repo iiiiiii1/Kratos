@@ -45,34 +45,6 @@
 	var parallax = function() {
 		$(window).stellar();
 	};
-	var offcanvas = function() {
-		var $clone = $('#kratos-menu-wrap').clone();
-		$clone.attr({
-			'id': 'offcanvas-menu'
-		});
-		$clone.find('> ul').attr({
-			'class': '',
-			'id': ''
-		});
-		$('#kratos-page').prepend($clone);
-		$('.js-kratos-nav-toggle').on('click', function() {
-			if ($('body').hasClass('kratos-offcanvas')) {
-				$('body').removeClass('kratos-offcanvas');
-			} else {
-				$('body').addClass('kratos-offcanvas');
-			}
-		});
-		$('#offcanvas-menu').css('height', $(window).height());
-		$(window).resize(function() {
-			var w = $(window);
-			$('#offcanvas-menu').css('height', w.height());
-			if (w.width() > 769) {
-				if ($('body').hasClass('kratos-offcanvas')) {
-					$('body').removeClass('kratos-offcanvas');
-				}
-			}
-		});
-	}
 	var sidebaraffix = function() {
 		if ($("#main").height() > $("#sidebar").height()) {
 			var footerHeight = 0;
@@ -223,7 +195,6 @@
 		mainMenu();
 		shareMenu();
 		parallax();
-		offcanvas();
 		showThumb();
 		showlove();
 		gotop();
@@ -253,13 +224,6 @@ jQuery(document).ready(
 		}
 	});
 });
-//一言
-window.setInterval(getkoto,6000); 
-function getkoto(){
-	$.post("https://www.fczbl.vip/api/hitokoto/",function(hitokoto) {
-		$(".hitokoto").html(hitokoto);
-	});
-}
 //请在这里修改你的建站时间
 function show_date_time(){
 	window.setTimeout("show_date_time()",1e3);
