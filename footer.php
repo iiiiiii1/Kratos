@@ -3,7 +3,7 @@
  * The template for displaying the footer
  *
  * @package Vtrois
- * @version 2.5(17.12.23)
+ * @version 2.5(17.12.29)
  */
 ?>
 				<footer>
@@ -55,7 +55,7 @@
 				}
 				$('#sidebar').affix({
 					offset: {
-						top: $('#sidebar').offset().top - 30,
+						top: $('#sidebar').offset().top - 55,
 						bottom: $('#footer').outerHeight(true) + footerHeight + 6
 					}
 				});
