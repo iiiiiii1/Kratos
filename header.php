@@ -3,7 +3,7 @@
  * The template for displaying the header
  *
  * @package Vtrois
- * @version 2.5
+ * @version 2.5(17.12.29)
  */
 ?><!DOCTYPE HTML>
 <!--
@@ -68,15 +68,6 @@
 					<header id="kratos-header-section">
 						<div class="container">
 							<div class="nav-header">
-								<?php if ( has_nav_menu('header_menu') ) :?>
-									<a href="#" class="js-kratos-nav-toggle kratos-nav-toggle"><i></i></a>
-								<?php endif; ?>
-								<?php $site_logo = kratos_option('site_logo');?>
-								<?php if ( !empty( $site_logo ) ) {?>
-									<a href="<?php echo get_option('home'); ?>">
-									<h1 id="kratos-logo-img"><img src="<?php echo $site_logo; ?>"></h1>
-									</a>
-								<?php }?>
 								<?php $defaults = array('theme_location' => 'header_menu', 'container' => 'nav', 'container_id' => 'kratos-menu-wrap', 'menu_class' => 'sf-menu', 'menu_id' => 'kratos-primary-menu', ); ?>
 							 <?php wp_nav_menu($defaults); ?>
 							</div>
