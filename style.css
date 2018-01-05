@@ -345,6 +345,9 @@ table,table tbody tr th {
 	height:300px;
 	background-position:top
 }
+.kratos-cover .desc.desc3 {
+	top:38%
+}
 .kratos-cover .desc {
 	top:50%;
 	position:absolute;
