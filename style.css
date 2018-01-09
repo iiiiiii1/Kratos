@@ -1348,6 +1348,12 @@ a.comment-reply-link:hover {
 .comment-form .logged-in-as a {
 	color:#848484
 }
+#comments img {
+	max-width:100%
+}
+#comments img {
+	max-width:100%
+}
 #kratos-widget-area .widget {
 	margin:0 0 25px;
 	padding:30px;
